@@ -14,7 +14,7 @@ SELECT * FROM cloud_files("/databricks-datasets/retail-org/sales_orders/", "json
 
 -- COMMAND ----------
 
-CREATE STREAMING LIVE TABLE sales_orders_cleaned(
+CREATE STREAMING LIVE TABLE sales_orders_cleaned (
   CONSTRAINT valid_order_number EXPECT (order_number IS NOT NULL) ON VIOLATION DROP ROW
 )
 PARTITIONED BY (order_date)
