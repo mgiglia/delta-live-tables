@@ -4,6 +4,8 @@ COMMENT "The customers buying finished products, ingested from /databricks-datas
 TBLPROPERTIES ("quality" = "mapping")
 AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/customers/", "csv");
 
+-- COMMAND ----------
+
 CREATE STREAMING LIVE TABLE sales_orders_raw
 COMMENT "The raw sales orders, ingested from /databricks-datasets."
 TBLPROPERTIES ("quality" = "bronze")
