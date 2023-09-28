@@ -53,10 +53,27 @@ sales_order_path = "/databricks-datasets/retail-org/sales_orders/part-00000-tid-
 
 import json
 
+with open(sales_order_path, 'r') as file:
+    content = json.load(file)
+
+print(json.dumps(content, indent=4))
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+import json
+
 with open(sales_order_path) as f:
     j = f.read()
     j = json.loads(j)
     print(json.dumps(j, indent=4))
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
